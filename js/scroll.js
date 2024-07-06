@@ -6,7 +6,18 @@ document.addEventListener("DOMContentLoaded", function () {
     "[id=sections], [id=current-section]",
   );
   const nav = document.querySelector("nav");
+  var r = document.querySelector(":root");
 
+  if (window.innerWidth > 950) {
+    nav.style.height = "80px";
+  }
+  if (window.innerWidth < 800) {
+    r.style.setProperty("--big-size", "50px");
+    r.style.setProperty("--h2-size", "30px");
+    r.style.setProperty("--h3-size", "20px");
+    r.style.setProperty("--logo-size", "25px");
+    r.style.setProperty("--section-size", "15px");
+  }
   hamburger.addEventListener("click", function () {
     menu.classList.toggle("show");
   });
